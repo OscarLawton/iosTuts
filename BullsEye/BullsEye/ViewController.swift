@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
-
+    
+    var currentValue: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     @IBAction func showAlert(){
-        let alert = UIAlertController(title: "Hello!", message: "this is my first app", preferredStyle: .alert)
+        let message = "The value of the slider is now: \(currentValue)"
+        
+        let alert = UIAlertController(title: "Hello!", message: message, preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
         
@@ -25,9 +30,10 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func sliderMoved(slider: UISlider){
-        print("The value of the slider is now: \(slider.value)")
+    @IBAction func sliderMoved( slider: UISlider){
+        print("The value of the slider is now: \(slider.value * 100)")
+        currentValue = Int(round(slider.value * 100));
     }
-   
+   //Complete vid 4 or folder 3
 }
 
