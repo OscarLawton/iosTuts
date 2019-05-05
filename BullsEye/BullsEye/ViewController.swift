@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var targetValue: Int = 0
     
     @IBOutlet weak var slider: UISlider!
-    
+    @IBOutlet weak var targetVL: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let roundedValue = slider.value.rounded();
@@ -50,6 +50,7 @@ class ViewController: UIViewController {
         targetValue = Int.random(in: 1...100)
         currentValue = 50
         slider.value = Float(currentValue)
+        targetVL.text = String(targetValue);
     }
 }
 
