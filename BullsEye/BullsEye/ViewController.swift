@@ -13,9 +13,10 @@ class ViewController: UIViewController {
     
     var currentValue: Int = 0
     var targetValue: Int = 0
-    
+    var score = 0
     @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var targetVL: UILabel!
+    @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var scoreLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let roundedValue = slider.value.rounded();
@@ -45,7 +46,7 @@ class ViewController: UIViewController {
         //End soloution
         let difference = abs(targetValue - currentValue);
         let points = 100 - difference;
-        
+        score += points
         let message = "Your scored \(points) points!"
         /*let message = "The value of the slider is now: \(currentValue)" +
         "\n The target value is: \(targetValue)" +
@@ -73,7 +74,8 @@ class ViewController: UIViewController {
         targetValue = Int.random(in: 1...100)
         currentValue = 50
         slider.value = Float(currentValue)
-        targetVL.text = String(targetValue);
+        targetLabel.text = String(targetValue);
+        scoreLable.text = String(score);
     }
     //Completed folder 4 vid 4
 }
