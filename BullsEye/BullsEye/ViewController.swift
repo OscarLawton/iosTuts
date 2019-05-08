@@ -77,17 +77,29 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        let action = UIAlertAction(title: "Awesome", style: .default, handler: {
+            action in
+            self.startNewRound()
+        })
         
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
-        if(round < 10){
-            startNewRound()
-        }
+      
         
        
     
+    }
+    
+    @IBAction func startOver(){
+        score = 0
+        round = 0
+        targetValue = Int.random(in: 1...100)
+        currentValue = 50
+        slider.value = Float(currentValue)
+        targetLabel.text = String(targetValue);
+        scoreLable.text = String(score);
+        roundLable.text = String(round);
     }
     
     @IBAction func sliderMoved( slider: UISlider){
@@ -106,7 +118,7 @@ class ViewController: UIViewController {
         scoreLable.text = String(score);
         roundLable.text = String(round);
     }
-    //Completed folder 4 vid 4
+    //Completed folder 4 final vid
 }
 
 
