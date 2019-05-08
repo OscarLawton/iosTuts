@@ -62,10 +62,7 @@ class ViewController: UIViewController {
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
-<<<<<<< HEAD
-      
-=======
->>>>>>> parent of 50b3984... finished folder four
+
         
         startNewRound()
     }
@@ -79,6 +76,10 @@ class ViewController: UIViewController {
         targetLabel.text = String(targetValue);
         scoreLable.text = String(score);
         roundLable.text = String(round);
+=======
+        
+        startNewRound()
+>>>>>>> parent of 50b3984... finished folder four
     }
     
     @IBAction func sliderMoved( slider: UISlider){
