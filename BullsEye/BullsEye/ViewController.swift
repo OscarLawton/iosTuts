@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var currentValue: Int = 0
     var targetValue: Int = 0
     var score = 0
-    var round = 0
+    var round: Int = 0
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var scoreLable: UILabel!
@@ -106,6 +106,8 @@ class ViewController: UIViewController {
         targetLabel.text = String(targetValue);
         scoreLable.text = String(score);
         roundLable.text = String(round);
+       
+       
     }
     //Completed folder 4 vid 4
 }
